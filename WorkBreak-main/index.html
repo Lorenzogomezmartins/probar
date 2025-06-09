@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WorkBreak - Home</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <style>
+        /* Estilos para el modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            padding: 20px;
+            box-shadow: 0 0 10px #00000088;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .modal-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            background: none;
+        }
+
+        .modal-content p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Workbreak</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">Vuelos</a></li>
+                    <li><a href="#">Hoteles</a></li>
+                    <li><a href="#">Paquetes</a></li>
+                    <li><a href="#">Actividades</a></li>
+                    <li><a href="carrito.html" class="cart-icon" title="Ver carrito" style="cursor:pointer; font-size: 1.5rem;">
+                            🛒
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Espacios y Salas</h1>
+            <p>Encontrá tu lugar ideal para tus conferencias, estudios, charlas con las mejores ofertas</p>
+
+            <form class="search-form">
+                <div class="search-row">
+                    <div class="form-group">
+                        <label for="destino">Destino</label>
+                        <input id="destino" type="text" placeholder="¿A dónde vamos?" value="Buenos Aires, Argentina" />
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in</label>
+                        <input id="checkin" type="date" value="2025-06-10" />
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out</label>
+                        <input id="checkout" type="date" value="2025-06-15" />
+                    </div>
+                    <div class="form-group">
+                        <label for="huespedes">Huéspedes</label>
+                        <select id="huespedes">
+                            <option>2 adultos</option>
+                            <option>1 adulto</option>
+                            <option>3 adultos</option>
+                            <option>4 adultos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Filters -->
+        <section class="filters">
+            <h3>Filtrar por:</h3>
+            <div class="filter-row">
+                <div class="filter-item active">Todos</div>
+                <div class="filter-item">5 estrellas</div>
+                <div class="filter-item">4 estrellas</div>
+                <div class="filter-item">Con desayuno</div>
+                <div class="filter-item">WiFi gratis</div>
+                <div class="filter-item">Piscina</div>
+                <div class="filter-item">Cerca del centro</div>
+            </div>
+        </section>
+
+        <!-- Espacios Grid -->
+        <section class="workspaces-grid">
+            <!-- Espacio 1 -->
+            <div class="workspace-card" data-name="Sala de Estudio Central" data-location="Microcentro, Buenos Aires"
+                data-rating="8.5 Muy Bueno (112 reseñas)" data-amenities="WiFi rápido, Aire acondicionado, Zona silenciosa, Café libre"
+                data-price-old="ARS 5.000" data-price-current="ARS 4.200">
+                <div class="workspace-image"></div>
+                <div class="workspace-info">
+                    <h3 class="workspace-name">Sala de Estudio Central</h3>
+                    <div class="workspace-location">
+                        📍 Microcentro, Buenos Aires
+                    </div>
+                    <div class="workspace-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>8.5 Muy Bueno (112 reseñas)</span>
+                    </div>
+                    <div class="workspace-amenities">
+                        <span class="amenity">WiFi rápido</span>
+                        <span class="amenity">Aire acondicionado</span>
+                        <span class="amenity">Zona silenciosa</span>
+                        <span class="amenity">Café libre</span>
+                    </div>
+                </div>
+                <div class="workspace-price">
+                    <div class="price-old">ARS 5.000</div>
+                    <div class="price-current">ARS 4.200</div>
+                    <div class="price-details">por jornada • impuestos incluidos</div>
+                    <button class="book-btn" data-name="Sala de Estudio Central">Reservar</button>
+                </div>
+            </div>
+
+            <!-- Espacio 2 -->
+            <div class="workspace-card" data-name="CoWork Recoleta" data-location="Recoleta, Buenos Aires"
+                data-rating="9.2 Excelente (187 reseñas)" data-amenities="Salas privadas, Impresiones gratis, Kitchenette, Espacio relajación"
+                data-price-old="ARS 12.000" data-price-current="ARS 9.800">
+                <div class="workspace-image"></div>
+                <div class="workspace-info">
+                    <h3 class="workspace-name">CoWork Recoleta</h3>
+                    <div class="workspace-location">
+                        📍 Recoleta, Buenos Aires
+                    </div>
+                    <div class="workspace-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>9.2 Excelente (187 reseñas)</span>
+                    </div>
+                    <div class="workspace-amenities">
+                        <span class="amenity">Salas privadas</span>
+                        <span class="amenity">Impresiones gratis</span>
+                        <span class="amenity">Kitchenette</span>
+                        <span class="amenity">Espacio relajación</span>
+                    </div>
+                </div>
+                <div class="workspace-price">
+                    <div class="price-old">ARS 12.000</div>
+                    <div class="price-current">ARS 9.800</div>
+                    <div class="price-details">por jornada • impuestos incluidos</div>
+                    <button class="book-btn" data-name="CoWork Recoleta">Reservar</button>
+                </div>
+            </div>
+
+            <!-- Espacio 3 -->
+            <div class="workspace-card" data-name="Sala Conferencias Madero" data-location="Puerto Madero, Buenos Aires"
+                data-rating="8.9 Excelente (92 reseñas)" data-amenities="Pantalla gigante, Sonido profesional, WiFi corporativo, Recepción"
+                data-price-old="ARS 25.000" data-price-current="ARS 21.500">
+                <div class="workspace-image"></div>
+                <div class="workspace-info">
+                    <h3 class="workspace-name">Sala Conferencias Madero</h3>
+                    <div class="workspace-location">
+                        📍 Puerto Madero, Buenos Aires
+                    </div>
+                    <div class="workspace-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>8.9 Excelente (92 reseñas)</span>
+                    </div>
+                    <div class="workspace-amenities">
+                        <span class="amenity">Pantalla gigante</span>
+                        <span class="amenity">Sonido profesional</span>
+                        <span class="amenity">WiFi corporativo</span>
+                        <span class="amenity">Recepción</span>
+                    </div>
+                </div>
+                <div class="workspace-price">
+                    <div class="price-old">ARS 25.000</div>
+                    <div class="price-current">ARS 21.500</div>
+                    <div class="price-details">por jornada • impuestos incluidos</div>
+                    <button class="book-btn" data-name="Sala Conferencias Madero">Reservar</button>
+                </div>
+            </div>
+
+            <!-- Espacio 4 -->
+            <div class="workspace-card" data-name="WorkSpot Retiro" data-location="Retiro, Buenos Aires"
+                data-rating="8.0 Muy Bueno (135 reseñas)" data-amenities="Coworking 24hs, Cabinas Zoom, Estacionamiento, Seguridad"
+                data-price-old="ARS 9.000" data-price-current="ARS 7.650">
+                <div class="workspace-image"></div>
+                <div class="workspace-info">
+                    <h3 class="workspace-name">WorkSpot Retiro</h3>
+                    <div class="workspace-location">
+                        📍 Retiro, Buenos Aires
+                    </div>
+                    <div class="workspace-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>8.0 Muy Bueno (135 reseñas)</span>
+                    </div>
+                    <div class="workspace-amenities">
+                        <span class="amenity">Coworking 24hs</span>
+                        <span class="amenity">Cabinas Zoom</span>
+                        <span class="amenity">Estacionamiento</span>
+                        <span class="amenity">Seguridad</span>
+                    </div>
+                </div>
+                <div class="workspace-price">
+                    <div class="price-old">ARS 9.000</div>
+                    <div class="price-current">ARS 7.650</div>
+                    <div class="price-details">por jornada • impuestos incluidos</div>
+                    <button class="book-btn" data-name="WorkSpot Retiro">Reservar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn">« Anterior</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">Siguiente »</button>
+        </div>
+    </main>
+
+    <!-- Modal para confirmación -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Reserva guardada</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-content" id="modal-content">
+                <p>El espacio ha sido guardado en tu almacenamiento local.</p>
+                <button id="download-json-btn">Descargar JSON</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir detalle.html con el nombre del espacio en la URL
+        function reservar(e) {
+            const espacio = e.target.getAttribute('data-name');
+            if (espacio) {
+                // Codificar el nombre para que sea válido en la URL
+                const nombreCodificado = encodeURIComponent(espacio);
+                // Abrir detalle.html en nueva pestaña con el parámetro
+                window.open(`detalle.html?espacio=${nombreCodificado}`, '_blank');
+            }
+        }
+
+        // Agregar event listener a todos los botones reservar
+        document.querySelectorAll('.book-btn').forEach(btn => {
+            btn.addEventListener('click', reservar);
+        });
+
+        // Aquí puedes agregar otras funciones de manejo del modal si usas modal para reserva guardada
+    </script>
+</body>
+
+</html>

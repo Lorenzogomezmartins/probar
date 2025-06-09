@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Departamento Moderno - Airbnb</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dBwexv7lyrL0E7+X7M5FhR+91qKQLU9Mqa5ZPPNqT+vwxVJ3OX35qz0Mtx4HZhW0eyQ1BtH3pvN2P5bJlhC1pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fab fa-airbnb"></i> <span>airbnb</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="¿A dónde vas?" />
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="user-menu">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="listing-container">
+        <!-- Galería de imágenes -->
+        <div class="image-gallery">
+            <div
+              class="main-image"
+              style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
+            ></div>
+            <div class="thumbnails">
+                <div
+                  class="thumbnail"
+                  style="background-image: url('https://images.unsplash.com/photo-1582719471386-3a0678008990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
+                ></div>
+                <div
+                  class="thumbnail"
+                  style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
+                ></div>
+                <div
+                  class="thumbnail"
+                  style="background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
+                ></div>
+            </div>
+        </div>
+            <div class="divider"></div>
+
+
+
+        <!-- Detalles y booking form -->
+        <div class="content-wrapper">
+            <!-- Detalles del alojamiento -->
+            <div class="listing-details">
+                <h1>Departamento moderno en Palermo, Buenos Aires</h1>
+                <div class="info-section">
+                    <div class="rating">
+                        <i class="fas fa-star"></i> <strong>4.92</strong> <span>(128 reseñas)</span>
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Palermo, Buenos Aires, Argentina</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="description">
+                    <p>
+                      Este acogedor departamento está ubicado en el corazón de Palermo, cerca de los mejores bares, restaurantes y tiendas. Ideal para parejas o viajeros solitarios que buscan comodidad y estilo.
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="amenities">
+                    <h2>¿Qué ofrece este lugar?</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity">
+                            <i class="fas fa-wifi"></i> <span>Wi-Fi rápido</span>
+                        </div>
+                        <div class="amenity">
+                            <i class="fas fa-utensils"></i> <span>Cocina equipada</span>
+                        </div>
+                        <div class="amenity">
+                            <i class="fas fa-snowflake"></i> <span>Aire acondicionado</span>
+                        </div>
+                        <div class="amenity">
+                            <i class="fas fa-tv"></i> <span>TV inteligente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="reviews">
+                    <h2><i class="fas fa-star"></i> 4.92 · 128 reseñas</h2>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img
+                              src="https://randomuser.me/api/portraits/women/44.jpg"
+                              alt="Usuario"
+                            />
+                            <div>
+                                <strong>María</strong>
+                                <p>Febrero 2024</p>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                          "El departamento es exactamente como en las fotos. ¡La ubicación es perfecta!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de reserva -->
+            <div class="booking-form">
+                <div class="price-section">
+                    <h3>$50 <span>USD / noche</span></h3>
+                    <div class="rating-small">
+                        <i class="fas fa-star"></i> 4.92 · <a href="#">128 reseñas</a>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="date-inputs">
+                        <div class="date-input">
+                            <label for="checkin">Llegada</label>
+                            <input id="checkin" type="date" value="2026-04-03" />
+                        </div>
+                        <div class="date-input">
+                            <label for="checkout">Salida</label>
+                            <input id="checkout" type="date" value="2026-04-05" />
+                        </div>
+                    </div>
+
+                    <div class="guests-input">
+                        <label for="guests">Huéspedes</label>
+                        <select id="guests">
+                            <option>1 huésped</option>
+                            <option selected>2 huéspedes</option>
+                            <option>3+ huéspedes</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="reserve-btn">
+                        <i class="fas fa-calendar-check"></i> Reservar
+                    </button>
+
+                    <p class="no-charge">No se cobrará nada todavía</p>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>$50 x 2 noches</span>
+                            <span>$100</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Tarifa de limpieza</span>
+                            <span>$10</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Tarifa de servicio</span>
+                            <span>$5</span>
+                        </div>
+                        <div class="price-row total">
+                            <strong>Total</strong>
+                            <strong>$115</strong>
+                            <div class="map-section">
+    <h2><i class="fas fa-map-marker-alt"></i> Ubicación</h2>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.981918884765!2d-58.43016692405126!3d-34.62941205849192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb5b2d8ffbaf%3A0x9b5489341a5383a6!2sPalermo%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1717595671742!5m2!1ses-419!2sar" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

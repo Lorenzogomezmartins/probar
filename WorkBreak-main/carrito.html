@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito de Reservas</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; }
+        h1 { text-align: center; }
+        .carrito-item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        .carrito-item h2 { margin: 0 0 5px; }
+        .carrito-item p { margin: 2px 0; }
+        .total { font-weight: bold; font-size: 1.2em; text-align: right; margin-top: 20px; }
+        button { background-color: #d9534f; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 3px; }
+        button:hover { background-color: #c9302c; }
+    </style>
+</head>
+<body>
+    <h1>Carrito de Reservas</h1>
+
+    <div id="carrito-contenedor">
+        <!-- Aquí se cargarán los items -->
+    </div>
+
+    <div class="total" id="total-carrito">Total: ARS 0</div>
+
+    <div style="text-align:center; margin-top: 20px;">
+        <button id="vaciar-carrito-btn">Vaciar Carrito</button>
+    </div>
+
+    <script>
+        // Obtener carrito del localStorage
+        function obtenerCarrito() {
+            const carritoJSON = localStorage.getItem('carritoReservas');
+            return carritoJSON ? JSON.parse(carritoJSON) : [];
+        }
+
+        // Guardar carrito en localStorage
+        function guardarCarrito(carrito) {
+            localStorage.setItem('carritoReservas', JSON.stringify(carrito));
+        }
+
+        // Mostrar carrito en pantalla
+        function mostrarCarrito() {
+            const contenedor = document.getElementById('carrito-contenedor');
+            const carrito = obtenerCarrito();
+            contenedor.innerHTML = '';
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = '<p>El carrito está vacío.</p>';
+                document.getElementById('total-carrito').textContent = 'Total: ARS 0';
+                return;
+            }
+
+            let total = 0;
+
+            carrito.forEach((item, index) => {
+                total += Number(item.total) || 0;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('carrito-item');
+
+                itemDiv.innerHTML = `
+                    <h2>${item.nombre}</h2>
+                    <p><strong>Ubicación:</strong> ${item.ubicacion}</p>
+                    <p><strong>Check-in:</strong> ${item.checkin || 'N/A'}</p>
+                    <p><strong>Check-out:</strong> ${item.checkout || 'N/A'}</p>
+                    <p><strong>Noches:</strong> ${item.noches || 'N/A'}</p>
+                    <p><strong>Huéspedes:</strong> ${item.guests || 'N/A'}</p>
+                    <p><strong>Total a pagar:</strong> ARS ${Number(item.total).toFixed(2)}</p>
+                    <button data-index="${index}" class="btn-eliminar">Eliminar</button>
+                `;
+
+                contenedor.appendChild(itemDiv);
+            });
+
+            document.getElementById('total-carrito').textContent = `Total: ARS ${total.toFixed(2)}`;
+
+            // Asignar evento a botones eliminar
+            document.querySelectorAll('.btn-eliminar').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.getAttribute('data-index'));
+                    eliminarDelCarrito(idx);
+                });
+            });
+        }
+
+        // Eliminar item por índice y actualizar
+        function eliminarDelCarrito(index) {
+            let carrito = obtenerCarrito();
+            carrito.splice(index, 1);
+            guardarCarrito(carrito);
+            mostrarCarrito();
+        }
+
+        // Vaciar carrito completo
+        function vaciarCarrito() {
+            localStorage.removeItem('carritoReservas');
+            mostrarCarrito();
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', () => {
+            mostrarCarrito();
+
+            document.getElementById('vaciar-carrito-btn').addEventListener('click', () => {
+                if (confirm('¿Seguro que quieres vaciar el carrito?')) {
+                    vaciarCarrito();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
